@@ -1,0 +1,51 @@
+# Environment variables & secrets
+.env
+.env.local
+.env.*.local
+*.env
+
+# Python virtual environment & cache
+venv/
+.venv/
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+
+# Local Vector Databases & Cloned Code
+backend/chroma_db/
+chroma_db/
+cloned_repos/
+*.sqlite3
+
+# Node / Next.js
+frontend/node_modules/
+node_modules/
+frontend/.next/
+.next/
+frontend/out/
+out/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# OS specific files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE & Editor files
+.idea/
+.vscode/
+*.swp
+*.swo

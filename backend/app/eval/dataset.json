@@ -1,0 +1,122 @@
+[
+  {
+    "question": "How do I install this project?",
+    "ground_truth": "Check the README for installation instructions including prerequisites and setup steps.",
+    "category": "answerable_from_docs"
+  },
+  {
+    "question": "What are the main features of this project?",
+    "ground_truth": "The main features are listed in the README and documentation.",
+    "category": "answerable_from_docs"
+  },
+  {
+    "question": "How do I configure the environment variables?",
+    "ground_truth": "Environment variables are typically documented in .env.example or the README.",
+    "category": "answerable_from_docs"
+  },
+  {
+    "question": "What programming language is this project written in?",
+    "ground_truth": "The programming language can be determined from the repository's file structure and README.",
+    "category": "answerable_from_docs"
+  },
+  {
+    "question": "How do I run the tests?",
+    "ground_truth": "Test instructions are typically in the README or CONTRIBUTING.md.",
+    "category": "answerable_from_docs"
+  },
+  {
+    "question": "What is the project's license?",
+    "ground_truth": "The license is specified in the LICENSE file or README.",
+    "category": "answerable_from_docs"
+  },
+  {
+    "question": "How do I contribute to this project?",
+    "ground_truth": "Contribution guidelines are in CONTRIBUTING.md or the README.",
+    "category": "answerable_from_docs"
+  },
+  {
+    "question": "What dependencies does this project require?",
+    "ground_truth": "Dependencies are listed in package.json, requirements.txt, or equivalent files.",
+    "category": "answerable_from_docs"
+  },
+  {
+    "question": "How do I deploy this project to production?",
+    "ground_truth": "Deployment instructions should be in the documentation.",
+    "category": "answerable_from_docs"
+  },
+  {
+    "question": "What is the project's architecture?",
+    "ground_truth": "Architecture details are in the documentation or README.",
+    "category": "answerable_from_docs"
+  },
+  {
+    "question": "What are common alternatives to this project?",
+    "ground_truth": "Alternatives can be found through web search and comparison articles.",
+    "category": "answerable_from_web"
+  },
+  {
+    "question": "How does this project compare to similar tools in the ecosystem?",
+    "ground_truth": "Comparisons are available in blog posts, articles, and community discussions.",
+    "category": "answerable_from_web"
+  },
+  {
+    "question": "What are the latest updates or releases?",
+    "ground_truth": "Latest releases can be found on the GitHub releases page or changelog.",
+    "category": "answerable_from_web"
+  },
+  {
+    "question": "Are there any known security vulnerabilities?",
+    "ground_truth": "Security advisories are tracked on GitHub and security databases.",
+    "category": "answerable_from_web"
+  },
+  {
+    "question": "What hosting providers are recommended for this project?",
+    "ground_truth": "Hosting recommendations can be found in community forums and documentation.",
+    "category": "answerable_from_web"
+  },
+  {
+    "question": "How do I implement a custom XYZ-widget-frobnicator with this project?",
+    "ground_truth": "This is a made-up feature that doesn't exist in the project.",
+    "category": "genuinely_unknown"
+  },
+  {
+    "question": "Why does error code ZETA-9999 occur during startup?",
+    "ground_truth": "This is a fabricated error code that doesn't exist.",
+    "category": "genuinely_unknown"
+  },
+  {
+    "question": "How do I integrate this with the FooBar Enterprise Platform v99?",
+    "ground_truth": "This integration doesn't exist.",
+    "category": "genuinely_unknown"
+  },
+  {
+    "question": "What is the internal implementation of the quantum-flux-capacitor module?",
+    "ground_truth": "This module doesn't exist in the project.",
+    "category": "genuinely_unknown"
+  },
+  {
+    "question": "Can this project process data faster than the speed of light?",
+    "ground_truth": "This is a nonsensical question.",
+    "category": "genuinely_unknown"
+  },
+  {
+    "question": "What is the weather like today?",
+    "ground_truth": "This is not related to the repository.",
+    "category": "out_of_scope"
+  },
+  {
+    "question": "Can you write me a poem about cats?",
+    "ground_truth": "This is not related to the repository.",
+    "category": "out_of_scope"
+  },
+  {
+    "question": "What is the capital of France?",
+    "ground_truth": "This is not related to the repository.",
+    "category": "out_of_scope"
+  },
+  {
+    "question": "Tell me a joke.",
+    "ground_truth": "This is not related to the repository.",
+    "category": "out_of_scope"
+  }
+]

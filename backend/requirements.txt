@@ -1,0 +1,40 @@
+# === Agent Framework ===
+langgraph>=0.4
+langchain>=0.3
+langchain-groq
+langchain-community
+langchain-chroma
+langchain-openai
+
+# === Vector Store & Embeddings ===
+chromadb
+sentence-transformers
+
+# === API Server ===
+fastapi
+uvicorn[standard]
+
+# === Config ===
+pydantic-settings
+python-dotenv
+
+# === Web Search ===
+tavily-python
+
+# === GitHub Ingestion ===
+requests
+gitpython
+
+# === Event Pipeline (Phase 3) ===
+confluent-kafka
+redis
+pymongo
+
+# === Eval (Phase 5) ===
+ragas
+datasets
+
+# === Testing ===
+pytest
+pytest-asyncio
+httpx
