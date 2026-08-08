@@ -6,12 +6,35 @@ import os
 import logging
 from typing import List, Optional, Dict, Any
 from langchain_core.documents import Document
+from langchain_core.embeddings import Embeddings
 from langchain_chroma import Chroma
-from langchain_huggingface import HuggingFaceEmbeddings
+from sentence_transformers import SentenceTransformer
 
 from app.config import settings
 
 logger = logging.getLogger(__name__)
+
+
+class LocalSentenceTransformerEmbeddings(Embeddings):
+    """
+    Direct, robust local sentence-transformers embeddings implementing
+    LangChain's Embeddings interface. Completely free, fast, and offline.
+    """
+
+    def __init__(self, model_name: str = "all-MiniLM-L6-v2", device: str = "cpu"):
+        self.model_name = model_name
+        self.device = device
+        self.model = SentenceTransformer(model_name, device=device)
+
+    def embed_documents(self, texts: List[str]) -> List[List[float]]:
+        """Embed search/document chunks."""
+        embeddings = self.model.encode(texts, normalize_embeddings=True)
+        return embeddings.tolist()
+
+    def embed_query(self, text: str) -> List[float]:
+        """Embed a single user query."""
+        embedding = self.model.encode(text, normalize_embeddings=True)
+        return embedding.tolist()
 
 
 _embedding_instance = None
@@ -32,11 +55,10 @@ def get_embedding_function():
             openai_api_key=settings.openai_api_key,
         )
     else:
-        # Local sentence-transformers (free, offline, no API key required)
-        _embedding_instance = HuggingFaceEmbeddings(
+        # Direct local sentence-transformers (free, offline, no API key required)
+        _embedding_instance = LocalSentenceTransformerEmbeddings(
             model_name=settings.local_embedding_model,
-            model_kwargs={"device": "cpu"},
-            encode_kwargs={"normalize_embeddings": True},
+            device="cpu",
         )
     return _embedding_instance
 
