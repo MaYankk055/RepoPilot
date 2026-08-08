@@ -3,6 +3,7 @@ Centralized LLM client factory with robust SSL certificate verification and conn
 """
 
 import os
+import ssl
 import certifi
 import httpx
 import logging
@@ -23,7 +24,8 @@ def get_http_client() -> httpx.Client:
     falling back gracefully if SSL chain inspection fails.
     """
     try:
-        return httpx.Client(verify=certifi.where(), timeout=60.0)
+        ssl_context = ssl.create_default_context(cafile=certifi.where())
+        return httpx.Client(verify=ssl_context, timeout=60.0)
     except Exception as e:
         logger.warning(f"Could not initialize httpx client with certifi: {e}, using fallback client")
         return httpx.Client(verify=False, timeout=60.0)

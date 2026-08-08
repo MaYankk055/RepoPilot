@@ -97,7 +97,7 @@ RepoPilot/
 
 ```bash
 # 1. Clone repository
-git clone https://github.com/your-username/RepoPilot.git
+git clone https://github.com/MaYankk055/RepoPilot.git
 cd RepoPilot
 
 # 2. Configure environment
