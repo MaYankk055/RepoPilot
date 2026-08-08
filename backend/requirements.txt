@@ -9,6 +9,7 @@ langchain-openai
 # === Vector Store & Embeddings ===
 chromadb
 sentence-transformers
+langchain-huggingface
 
 # === API Server ===
 fastapi

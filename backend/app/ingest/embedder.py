@@ -4,17 +4,10 @@ Chroma vector store setup — embeds, indexes, and stores codebase chunks with c
 
 import os
 import logging
-import warnings
 from typing import List, Optional, Dict, Any
 from langchain_core.documents import Document
 from langchain_chroma import Chroma
-
-try:
-    from langchain_huggingface import HuggingFaceEmbeddings
-except ImportError:
-    with warnings.catch_warnings():
-        warnings.simplefilter("ignore")
-        from langchain_community.embeddings import HuggingFaceEmbeddings
+from langchain_huggingface import HuggingFaceEmbeddings
 
 from app.config import settings
 
@@ -40,13 +33,11 @@ def get_embedding_function():
         )
     else:
         # Local sentence-transformers (free, offline, no API key required)
-        with warnings.catch_warnings():
-            warnings.simplefilter("ignore")
-            _embedding_instance = HuggingFaceEmbeddings(
-                model_name=settings.local_embedding_model,
-                model_kwargs={"device": "cpu"},
-                encode_kwargs={"normalize_embeddings": True},
-            )
+        _embedding_instance = HuggingFaceEmbeddings(
+            model_name=settings.local_embedding_model,
+            model_kwargs={"device": "cpu"},
+            encode_kwargs={"normalize_embeddings": True},
+        )
     return _embedding_instance
 
 
